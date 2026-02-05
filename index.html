@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вечные Образы: Наследие Женщин Беларуси</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <style>
         :root {
@@ -21,137 +24,724 @@
             --font-display: 'Philosopher', sans-serif;
             --font-body: 'Cormorant Garamond', serif;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-body); background: var(--cream); color: var(--charcoal); overflow-x: hidden; position: relative; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--cream);
+            color: var(--charcoal);
+            overflow-x: hidden;
+            position: relative;
+        }
+
         body::before {
-            content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(139, 21, 56, 0.02) 2px, rgba(139, 21, 56, 0.02) 4px),
-                            repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(139, 21, 56, 0.02) 2px, rgba(139, 21, 56, 0.02) 4px);
-            pointer-events: none; z-index: 0;
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(139, 21, 56, 0.02) 2px, rgba(139, 21, 56, 0.02) 4px);
+            pointer-events: none;
+            z-index: 0;
         }
+
         header {
-            position: relative; background: linear-gradient(135deg, var(--burgundy) 0%, var(--deep-red) 100%);
-            color: var(--white); padding: 4rem 2rem; text-align: center;
-            box-shadow: 0 8px 32px rgba(139, 21, 56, 0.3); overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, var(--burgundy) 0%, var(--deep-red) 100%);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(139, 21, 56, 0.3);
+            overflow: hidden;
         }
+
         header::before {
-            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
             background: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255, 255, 255, 0.03) 20px, rgba(255, 255, 255, 0.03) 40px);
             animation: slidePattern 60s linear infinite;
         }
-        @keyframes slidePattern { 0% { transform: translate(0, 0); } 100% { transform: translate(40px, 40px); } }
-        .header-content { position: relative; z-index: 1; }
-        h1 { font-family: var(--font-display); font-size: 3.5rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: 2px; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); animation: fadeInDown 1s ease-out; }
-        .subtitle { font-size: 1.5rem; font-weight: 300; letter-spacing: 1px; opacity: 0.95; animation: fadeInUp 1s ease-out 0.3s both; }
+
+        @keyframes slidePattern {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(40px, 40px);
+            }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
         .year-badge {
-            display: inline-block; margin-top: 1.5rem; padding: 0.75rem 2rem; background: var(--gold);
-            color: var(--charcoal); font-family: var(--font-display); font-size: 1.1rem; font-weight: 700;
-            border-radius: 50px; box-shadow: 0 4px 16px rgba(212, 175, 55, 0.4); animation: fadeInUp 1s ease-out 0.6s both;
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.75rem 2rem;
+            background: var(--gold);
+            color: var(--charcoal);
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            box-shadow: 0 4px 16px rgba(212, 175, 55, 0.4);
+            animation: fadeInUp 1s ease-out 0.6s both;
         }
-        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        nav { position: sticky; top: 0; background: var(--white); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); z-index: 1000; padding: 1rem 2rem; }
-        nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; }
-        nav a { font-family: var(--font-display); text-decoration: none; color: var(--charcoal); font-size: 1.1rem; font-weight: 500; position: relative; transition: color 0.3s; }
-        nav a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: var(--burgundy); transition: width 0.3s; }
-        nav a:hover { color: var(--burgundy); }
-        nav a:hover::after { width: 100%; }
-        .container { max-width: 1400px; margin: 0 auto; padding: 3rem 2rem; position: relative; }
-        .intro-section { text-align: center; margin-bottom: 4rem; padding: 3rem; background: var(--white); border-radius: 16px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); animation: fadeIn 1s ease-out; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .intro-section h2 { font-family: var(--font-display); font-size: 2.5rem; color: var(--burgundy); margin-bottom: 1.5rem; }
-        .intro-section p { font-size: 1.3rem; line-height: 1.8; color: var(--charcoal); max-width: 900px; margin: 0 auto; }
-        .timeline-section { margin-bottom: 4rem; }
-        .timeline-header { text-align: center; margin-bottom: 3rem; }
-        .timeline-header h2 { font-family: var(--font-display); font-size: 2.8rem; color: var(--burgundy); margin-bottom: 1rem; }
-        .timeline-header p { font-size: 1.2rem; color: var(--charcoal); opacity: 0.8; }
-        .timeline-container { position: relative; padding: 2rem 0; }
-        .timeline-line { position: absolute; left: 50%; transform: translateX(-50%); width: 4px; height: 100%; background: linear-gradient(to bottom, var(--burgundy), var(--gold)); border-radius: 2px; }
-        .timeline-period { position: relative; margin-bottom: 4rem; animation: slideInTimeline 0.8s ease-out both; }
-        .timeline-period:nth-child(1) { animation-delay: 0.1s; }
-        .timeline-period:nth-child(2) { animation-delay: 0.2s; }
-        .timeline-period:nth-child(3) { animation-delay: 0.3s; }
-        .timeline-period:nth-child(4) { animation-delay: 0.4s; }
-        .timeline-period:nth-child(5) { animation-delay: 0.5s; }
-        .timeline-period:nth-child(6) { animation-delay: 0.6s; }
-        .timeline-period:nth-child(7) { animation-delay: 0.7s; }
-        @keyframes slideInTimeline { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        .timeline-period:nth-child(odd) .period-content { margin-right: 55%; text-align: right; }
-        .timeline-period:nth-child(even) .period-content { margin-left: 55%; text-align: left; }
-        .period-marker { position: absolute; left: 50%; top: 0; transform: translateX(-50%); width: 24px; height: 24px; background: var(--gold); border: 4px solid var(--white); border-radius: 50%; box-shadow: 0 0 0 4px var(--burgundy); z-index: 10; }
-        .period-content { background: var(--white); padding: 2rem; border-radius: 12px; box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1); transition: transform 0.3s, box-shadow 0.3s; }
-        .period-content:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(139, 21, 56, 0.2); }
-        .period-title { font-family: var(--font-display); font-size: 1.8rem; color: var(--burgundy); margin-bottom: 0.75rem; font-weight: 700; }
-        .period-dates { font-size: 1rem; color: var(--gold); font-weight: 600; margin-bottom: 1rem; letter-spacing: 1px; }
-        .period-description { font-size: 1.1rem; line-height: 1.7; color: var(--charcoal); margin-bottom: 1.5rem; opacity: 0.85; }
-        .women-list { margin-top: 1.5rem; }
-        .woman-card { background: var(--soft-gray); padding: 1.25rem; margin-bottom: 1rem; border-radius: 8px; cursor: pointer; transition: all 0.3s; border-left: 4px solid var(--burgundy); }
-        .woman-card:hover { background: var(--cream); transform: translateX(5px); box-shadow: 0 4px 16px rgba(139, 21, 56, 0.15); }
-        .woman-name { font-family: var(--font-display); font-size: 1.3rem; color: var(--burgundy); font-weight: 700; margin-bottom: 0.3rem; }
-        .woman-years { font-size: 0.95rem; color: var(--gold); font-weight: 600; margin-bottom: 0.5rem; }
-        .woman-description { font-size: 1.05rem; line-height: 1.6; color: var(--charcoal); }
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); z-index: 2000; overflow-y: auto; animation: fadeIn 0.3s; }
-        .modal.active { display: flex; align-items: center; justify-content: center; padding: 2rem; }
-        .modal-content { background: var(--white); max-width: 800px; width: 100%; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); animation: slideUp 0.4s ease-out; position: relative; }
-        @keyframes slideUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
-        .modal-header { background: linear-gradient(135deg, var(--burgundy), var(--deep-red)); color: var(--white); padding: 2.5rem; position: relative; }
-        .modal-close { position: absolute; top: 1.5rem; right: 1.5rem; background: rgba(255, 255, 255, 0.2); border: none; color: var(--white); font-size: 2rem; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; transition: background 0.3s; display: flex; align-items: center; justify-content: center; z-index: 10; }
-        .modal-close:hover { background: rgba(255, 255, 255, 0.3); }
-        .chronicle-header { background: linear-gradient(135deg, var(--gold), var(--burgundy)); }
-        .modal-body { padding: 2.5rem; }
-        .modal-name { font-family: var(--font-display); font-size: 2.5rem; margin-bottom: 0.5rem; }
-        .modal-years { font-size: 1.3rem; opacity: 0.9; }
-        .modal-description { font-size: 1.2rem; line-height: 1.8; color: var(--charcoal); }
-        .modal-quote { margin-top: 2rem; padding: 1.5rem; background: var(--soft-gray); border-left: 4px solid var(--gold); border-radius: 8px; font-style: italic; font-size: 1.15rem; color: var(--charcoal); }
-        .section { margin-bottom: 4rem; padding: 3rem; background: var(--white); border-radius: 16px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); text-align: center; }
-        .section h2 { font-family: var(--font-display); font-size: 2.5rem; color: var(--burgundy); margin-bottom: 1.5rem; }
-        .section p { font-size: 1.2rem; line-height: 1.8; color: var(--charcoal); max-width: 800px; margin: 0 auto 2rem auto; }
-        .chronicle-form { width: 100%; }
-        .form-group { margin-bottom: 1.5rem; text-align: left; }
-        .form-group label { display: block; font-family: var(--font-display); font-weight: 700; color: var(--burgundy); margin-bottom: 0.5rem; font-size: 1.1rem; }
-        .form-group input[type="text"], .form-group input[type="email"], .form-group textarea { width: 100%; padding: 0.8rem 1rem; border: 2px solid #ccc; border-radius: 8px; font-family: var(--font-body); font-size: 1.1rem; transition: border-color 0.3s; background: var(--white); }
-        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--gold); }
-        .cta-button, .submit-button { display: inline-block; margin-top: 2rem; padding: 1rem 2.5rem; background: var(--burgundy); color: var(--white); font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; text-decoration: none; border-radius: 50px; border: none; box-shadow: 0 6px 20px rgba(139, 21, 56, 0.3); transition: all 0.3s; cursor: pointer; }
-        .cta-button:hover, .submit-button:hover { background: var(--deep-red); transform: translateY(-3px); box-shadow: 0 8px 28px rgba(139, 21, 56, 0.4); }
-        footer { background: var(--charcoal); color: var(--white); padding: 3rem 2rem; text-align: center; }
-        footer p { font-size: 1.1rem; opacity: 0.9; }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--white);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-family: var(--font-display);
+            text-decoration: none;
+            color: var(--charcoal);
+            font-size: 1.1rem;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--burgundy);
+            transition: width 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--burgundy);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            position: relative;
+        }
+
+        .intro-section {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 3rem;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .intro-section h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--burgundy);
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-section p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--charcoal);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline-section {
+            margin-bottom: 4rem;
+        }
+
+        .timeline-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-header h2 {
+            font-family: var(--font-display);
+            font-size: 2.8rem;
+            color: var(--burgundy);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-header p {
+            font-size: 1.2rem;
+            color: var(--charcoal);
+            opacity: 0.8;
+        }
+
+        .timeline-container {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--burgundy), var(--gold));
+            border-radius: 2px;
+        }
+
+        .timeline-period {
+            position: relative;
+            margin-bottom: 4rem;
+            animation: slideInTimeline 0.8s ease-out both;
+        }
+
+        .timeline-period:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .timeline-period:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .timeline-period:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .timeline-period:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .timeline-period:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .timeline-period:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        .timeline-period:nth-child(7) {
+            animation-delay: 0.7s;
+        }
+
+        @keyframes slideInTimeline {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .timeline-period:nth-child(odd) .period-content {
+            margin-right: 55%;
+            text-align: right;
+        }
+
+        .timeline-period:nth-child(even) .period-content {
+            margin-left: 55%;
+            text-align: left;
+        }
+
+        .period-marker {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 24px;
+            height: 24px;
+            background: var(--gold);
+            border: 4px solid var(--white);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--burgundy);
+            z-index: 10;
+        }
+
+        .period-content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .period-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 36px rgba(139, 21, 56, 0.2);
+        }
+
+        .period-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--burgundy);
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .period-dates {
+            font-size: 1rem;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .period-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+            opacity: 0.85;
+        }
+
+        .women-list {
+            margin-top: 1.5rem;
+        }
+
+        .woman-card {
+            background: var(--soft-gray);
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-left: 4px solid var(--burgundy);
+        }
+
+        .woman-card:hover {
+            background: var(--cream);
+            transform: translateX(5px);
+            box-shadow: 0 4px 16px rgba(139, 21, 56, 0.15);
+        }
+
+        .woman-name {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: var(--burgundy);
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .woman-years {
+            font-size: 0.95rem;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .woman-description {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: var(--charcoal);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 2000;
+            overflow-y: auto;
+            animation: fadeIn 0.3s;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal-content {
+            background: var(--white);
+            max-width: 800px;
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.4s ease-out;
+            position: relative;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--burgundy), var(--deep-red));
+            color: var(--white);
+            padding: 2.5rem;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: var(--white);
+            font-size: 2rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .chronicle-header {
+            background: linear-gradient(135deg, var(--gold), var(--burgundy));
+        }
+
+        .modal-body {
+            padding: 2.5rem;
+        }
+
+        .modal-name {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-years {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+
+        .modal-description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--charcoal);
+        }
+
+        .modal-quote {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--soft-gray);
+            border-left: 4px solid var(--gold);
+            border-radius: 8px;
+            font-style: italic;
+            font-size: 1.15rem;
+            color: var(--charcoal);
+        }
+
+        .section {
+            margin-bottom: 4rem;
+            padding: 3rem;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .section h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--burgundy);
+            margin-bottom: 1.5rem;
+        }
+
+        .section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--charcoal);
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .chronicle-form {
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: var(--font-display);
+            font-weight: 700;
+            color: var(--burgundy);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            transition: border-color 0.3s;
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .cta-button,
+        .submit-button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 2.5rem;
+            background: var(--burgundy);
+            color: var(--white);
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            border: none;
+            box-shadow: 0 6px 20px rgba(139, 21, 56, 0.3);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .cta-button:hover,
+        .submit-button:hover {
+            background: var(--deep-red);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 28px rgba(139, 21, 56, 0.4);
+        }
+
+        footer {
+            background: var(--charcoal);
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
         @media (max-width: 968px) {
-            h1 { font-size: 2.5rem; }
-            .subtitle { font-size: 1.2rem; }
-            .timeline-period:nth-child(odd) .period-content, .timeline-period:nth-child(even) .period-content { margin-left: 10%; margin-right: 10%; text-align: left; }
-            .timeline-line { left: 2rem; }
-            .period-marker { left: 2rem; }
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .timeline-period:nth-child(odd) .period-content,
+            .timeline-period:nth-child(even) .period-content {
+                margin-left: 10%;
+                margin-right: 10%;
+                text-align: left;
+            }
+
+            .timeline-line {
+                left: 2rem;
+            }
+
+            .period-marker {
+                left: 2rem;
+            }
+
             /* Адаптивность для видео */
-            #intro > div { grid-template-columns: 1fr !important; }
+            #intro>div {
+                grid-template-columns: 1fr !important;
+            }
         }
+
         @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            .timeline-header h2, .section h2 { font-size: 2rem; }
-            .modal-content { margin: 1rem; }
-            nav ul { flex-direction: column; gap: 1rem; }
+            h1 {
+                font-size: 2rem;
+            }
+
+            .timeline-header h2,
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .modal-content {
+                margin: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
         }
+
         /* Чат-бот виджет стили */
-        #chatbot-container { position: fixed; bottom: 20px; right: 20px; z-index: 9999; display: none; }
-        #chatbot-container.open { display: block; }
-        #chatbot-toggle {
-            position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px;
-            border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white; border: none; font-size: 28px; cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 9998;
-            display: flex; align-items: center; justify-content: center; transition: transform 0.3s;
+        #chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            display: none;
         }
-        #chatbot-toggle:hover { transform: scale(1.1); }
-        #chatbot-toggle.hidden { display: none; }
+
+        #chatbot-container.open {
+            display: block;
+        }
+
+        #chatbot-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 9998;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+        }
+
+        #chatbot-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        #chatbot-toggle.hidden {
+            display: none;
+        }
+
         .chatbot-close-btn {
-            position: absolute; top: -15px; right: -15px; width: 35px; height: 35px;
-            background: #ff4757; color: white; border: none; border-radius: 50%;
-            font-size: 20px; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            display: flex; align-items: center; justify-content: center; z-index: 10000;
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 35px;
+            height: 35px;
+            background: #ff4757;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
             transition: transform 0.2s;
         }
-        .chatbot-close-btn:hover { transform: scale(1.1); background: #ff6b81; }
+
+        .chatbot-close-btn:hover {
+            transform: scale(1.1);
+            background: #ff6b81;
+        }
     </style>
 </head>
+
 <body>
     <header>
         <div class="header-content">
@@ -179,45 +769,50 @@
                 <div>
                     <h2>Добро пожаловать в пространство «Вечных Образов»</h2>
                     <p>
-                        Перед вами – живая история силы, мудрости и созидательной энергии. 
+                        Перед вами – живая история силы, мудрости и созидательной энергии.
                         Здесь оживают судьбы женщин, чья отвага, талант и преданность делу веками создавали Беларусь.
-                        Это не просто архив. Это мост между эпохами, на котором вы сможете прикоснуться к подлинным документам и артефактам, 
-                        побеседовать с великими соотечественницами через диалоговый ИИ, шагнуть в их эпоху с помощью виртуальной реальности, 
+                        Это не просто архив. Это мост между эпохами, на котором вы сможете прикоснуться к подлинным
+                        документам и артефактам,
+                        побеседовать с великими соотечественницами через диалоговый ИИ, шагнуть в их эпоху с помощью
+                        виртуальной реальности,
                         вписать историю своей семьи в народную летопись.
                     </p>
                     <p>
-                        Исследуйте «Линию Времени», чтобы выбрать путь. Или сразу начните путешествие с «Аллеи Славы». 
+                        Исследуйте «Линию Времени», чтобы выбрать путь. Или сразу начните путешествие с «Аллеи Славы».
                         Наследие ждет своего хранителя. Ваше путешествие начинается сейчас.
                     </p>
                 </div>
-                
+
                 <!-- Видео справа -->
-                <div style="position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.15);">
+                <div
+                    style="position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.15);">
                     <!-- ЗАМЕНИТЕ URL_ВАШЕГО_ВИДЕО на ссылку YouTube или путь к вашему видео -->
                     <!-- Для YouTube: используйте embed ссылку, например: https://www.youtube.com/embed/VIDEO_ID -->
                     <!-- Для локального видео: используйте <video> тег с вашим файлом -->
-                    
+
                     <!-- Вариант 1: YouTube видео -->
                     <!-- <iframe width="100%" height="315" src="URL_ВАШЕГО_ВИДЕО" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 16px;"></iframe> -->
-                    
+
                     <!-- Вариант 2: Локальное видео -->
-                    <!-- <video width="100%" controls style="border-radius: 16px;">
-                        <source src="your-video.mp4" type="video/mp4">
+                    <video width="100%" controls style="border-radius: 16px;">
+                        <source src="efraanim.mp4" type="video/mp4">
                         Ваш браузер не поддерживает видео.
-                    </video> -->
-                    
+                    </video>
+
                     <!-- Временный заполнитель (удалите когда добавите видео) -->
-                    <div style="background: linear-gradient(135deg, var(--burgundy), var(--deep-red)); padding: 4rem 2rem; text-align: center; color: white; border-radius: 16px;">
+                    <div
+                        style="background: linear-gradient(135deg, var(--burgundy), var(--deep-red)); padding: 4rem 2rem; text-align: center; color: white; border-radius: 16px;">
                         <div style="font-size: 4rem; margin-bottom: 1rem;">🎥</div>
-                        <h3 style="font-family: var(--font-display); margin-bottom: 1rem;">Место для вашего видео</h3>
-                        <p style="opacity: 0.9;">Раскомментируйте один из вариантов выше<br>и добавьте ссылку на ваше видео</p>
+                        <!--<h3 style="font-family: var(--font-display); margin-bottom: 1rem;">Место для вашего видео</h3>
+                        <p style="opacity: 0.9;">Раскомментируйте один из вариантов выше<br>и добавьте ссылку на ваше видео</p> -->
                     </div>
                 </div>
             </div>
-            
+
             <!-- Кнопка Начать обучение -->
             <div style="text-align: center; margin-top: 2rem;">
-                <a href="education.html" style="display: inline-block; padding: 1rem 3rem; background: linear-gradient(135deg, var(--burgundy), var(--deep-red)); color: var(--white); font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; text-decoration: none; border-radius: 50px; box-shadow: 0 4px 16px rgba(139, 21, 56, 0.4); transition: transform 0.3s, box-shadow 0.3s;">
+                <a href="education.html"
+                    style="display: inline-block; padding: 1rem 3rem; background: linear-gradient(135deg, var(--burgundy), var(--deep-red)); color: var(--white); font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; text-decoration: none; border-radius: 50px; box-shadow: 0 4px 16px rgba(139, 21, 56, 0.4); transition: transform 0.3s, box-shadow 0.3s;">
                     📚 Начать обучение →
                 </a>
             </div>
@@ -239,7 +834,8 @@
                         <div class="period-title">Княжества и ВКЛ</div>
                         <div class="period-dates">XII – XVI вв.</div>
                         <div class="period-description">
-                            Время формирования национальной идентичности, когда женщины становились опорой просвещения и духовности.
+                            Время формирования национальной идентичности, когда женщины становились опорой просвещения и
+                            духовности.
                         </div>
                         <div class="woman-card" onclick="openModal('euphrosyne')">
                             <div class="woman-name">Евфросиния Полоцкая</div>
@@ -258,21 +854,24 @@
                         <div class="period-title">Речь Посполитая</div>
                         <div class="period-dates">XVI – конец XVIII ст.</div>
                         <div class="period-description">
-                            Эпоха культурного расцвета, когда женщины становились основательницами художественных традиций и покровительницами искусств.
+                            Эпоха культурного расцвета, когда женщины становились основательницами художественных
+                            традиций и покровительницами искусств.
                         </div>
                         <div class="women-list">
                             <div class="woman-card" onclick="openModal('barbara')">
                                 <div class="woman-name">Барбара Радзивилл</div>
                                 <div class="woman-years">1520–1551</div>
                                 <div class="woman-description">
-                                    Королева польская и великая княгиня литовская, одна из самых романтичных и трагических фигур эпохи.
+                                    Королева польская и великая княгиня литовская, одна из самых романтичных и
+                                    трагических фигур эпохи.
                                 </div>
                             </div>
                             <div class="woman-card" onclick="openModal('franciszka')">
                                 <div class="woman-name">Франтишка Урсула Радзивилл</div>
                                 <div class="woman-years">1705–1753</div>
                                 <div class="woman-description">
-                                    Первая женщина-драматург в истории белорусской и польской литературы. Основательница домашнего театра в Несвиже.
+                                    Первая женщина-драматург в истории белорусской и польской литературы. Основательница
+                                    домашнего театра в Несвиже.
                                 </div>
                             </div>
                         </div>
@@ -285,14 +884,16 @@
                         <div class="period-title">Российская империя</div>
                         <div class="period-dates">конец XVIII – 1917 г.</div>
                         <div class="period-description">
-                            Время национального возрождения, когда женщины создавали основы современной белорусской литературы и культуры.
+                            Время национального возрождения, когда женщины создавали основы современной белорусской
+                            литературы и культуры.
                         </div>
                         <div class="women-list">
                             <div class="woman-card" onclick="openModal('tetka')">
                                 <div class="woman-name">Алоиза Пашкевич (Тётка)</div>
                                 <div class="woman-years">1876–1916</div>
                                 <div class="woman-description">
-                                    Одна из основательниц современной белорусской литературы, поэтесса, писательница, общественно-политический деятель.
+                                    Одна из основательниц современной белорусской литературы, поэтесса, писательница,
+                                    общественно-политический деятель.
                                 </div>
                             </div>
                         </div>
@@ -346,7 +947,8 @@
                                 <div class="woman-name">Мария Осипова</div>
                                 <div class="woman-years">1908–1999</div>
                                 <div class="woman-description">
-                                    Участница минского подполья, руководитель операции по ликвидации гауляйтера Вильгельма Кубе. Герой Советского Союза.
+                                    Участница минского подполья, руководитель операции по ликвидации гауляйтера
+                                    Вильгельма Кубе. Герой Советского Союза.
                                 </div>
                             </div>
                             <div class="woman-card" onclick="openModal('zinaida')">
@@ -392,7 +994,9 @@
         <section id="gallery" class="section">
             <h2>Аллея Славы</h2>
             <p>
-                Это персональные, наполненные технологиями залы для каждой героини, где оживают портреты, а документы превращаются в интерактивные истории. Платформа формирует целостный, визуально богатый и технологически продвинутый пантеон белорусских женщин.
+                Это персональные, наполненные технологиями залы для каждой героини, где оживают портреты, а документы
+                превращаются в интерактивные истории. Платформа формирует целостный, визуально богатый и технологически
+                продвинутый пантеон белорусских женщин.
             </p>
             <a href="gallery.html" class="cta-button">Исследовать галерею</a>
         </section>
@@ -400,7 +1004,9 @@
         <section id="chronicles" class="section">
             <h2>Народная Летопись</h2>
             <p>
-                Краудсорсинговый архив семейных подвигов. Раздел превращает каждого пользователя в соавтора, собирая бесценный пласт семейной, локальной истории, тем самым создавая живую, растущую коллективную память нации.
+                Краудсорсинговый архив семейных подвигов. Раздел превращает каждого пользователя в соавтора, собирая
+                бесценный пласт семейной, локальной истории, тем самым создавая живую, растущую коллективную память
+                нации.
             </p>
             <button class="cta-button" onclick="openChronicleModal()">Добавить свою историю</button>
         </section>
@@ -408,7 +1014,8 @@
         <section id="education" class="section">
             <h2>Урок в будущее</h2>
             <p>
-                Образовательный хаб для учителей и учеников. Интеграция платформы в образовательный процесс через готовые методические комплексы, виртуальные уроки и экскурсии.
+                Образовательный хаб для учителей и учеников. Интеграция платформы в образовательный процесс через
+                готовые методические комплексы, виртуальные уроки и экскурсии.
             </p>
             <a href="#" class="cta-button">Начать обучение</a>
         </section>
@@ -453,18 +1060,22 @@
                     </div>
                     <div class="form-group">
                         <label for="heroineName">Имя и фамилия героини</label>
-                        <input type="text" id="heroineName" name="heroine_name" placeholder="Например: Анна Ивановна" required>
+                        <input type="text" id="heroineName" name="heroine_name" placeholder="Например: Анна Ивановна"
+                            required>
                     </div>
                     <div class="form-group">
                         <label for="storyText">История</label>
-                        <textarea id="storyText" name="story" rows="6" placeholder="Расскажите о её жизни и поступках..." required></textarea>
+                        <textarea id="storyText" name="story" rows="6"
+                            placeholder="Расскажите о её жизни и поступках..." required></textarea>
                     </div>
                     <div class="form-group">
                         <label for="userEmail">Ваш Email (для связи)</label>
-                        <input type="email" id="userEmail" name="user_email" placeholder="vash_email@example.com" required>
+                        <input type="email" id="userEmail" name="user_email" placeholder="vash_email@example.com"
+                            required>
                     </div>
                     <p style="font-size: 1.1rem; color: #666; margin-bottom: 1rem;">
-                        * Ваша история будет проверена редактором в течение 3-5 рабочих дней. С Вами свяжутся для получения дополнительной информации.
+                        * Ваша история будет проверена редактором в течение 3-5 рабочих дней. С Вами свяжутся для
+                        получения дополнительной информации.
                     </p>
                     <div style="text-align: center;">
                         <button type="submit" class="submit-button" id="submitBtn">Отправить на модерацию</button>
@@ -516,7 +1127,7 @@
             document.body.style.overflow = 'auto';
         }
 
-        window.addEventListener('click', function(e) {
+        window.addEventListener('click', function (e) {
             const modal = document.getElementById('modal');
             const chronicleModal = document.getElementById('chronicleModal');
             if (e.target === modal) closeModal();
@@ -524,7 +1135,7 @@
         });
 
         document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
                 if (href && href.startsWith('#')) {
                     e.preventDefault();
@@ -547,7 +1158,7 @@
 
         document.querySelectorAll('.timeline-period').forEach(period => observer.observe(period));
 
-        (function() { emailjs.init("Z1bxKqTKyDrwHdGmM"); })();
+        (function () { emailjs.init("Z1bxKqTKyDrwHdGmM"); })();
 
         function submitChronicle(event) {
             event.preventDefault();
@@ -558,10 +1169,10 @@
             const templateParams = { heroine_name: document.getElementById('heroineName').value, story: document.getElementById('storyText').value, user_email: document.getElementById('userEmail').value };
             btn.textContent = "Отправка...";
             btn.disabled = true;
-            emailjs.send('service_ms1ybwv', 'template_26dz3eo', templateParams).then(function() {
+            emailjs.send('service_ms1ybwv', 'template_26dz3eo', templateParams).then(function () {
                 btn.textContent = "Отправлено!";
                 setTimeout(() => { alert("Спасибо! Ваша история получена."); document.getElementById('chronicleForm').reset(); closeChronicleModal(); btn.textContent = originalText; btn.disabled = false; }, 1000);
-            }, function(error) {
+            }, function (error) {
                 console.error('FAILED...', error);
                 btn.textContent = "Ошибка";
                 alert("Ошибка соединения.");
@@ -569,11 +1180,12 @@
             });
         }
     </script>
-    
+
     <button id="chatbot-toggle" onclick="toggleChatbot()">💬</button>
     <div id="chatbot-container">
         <button class="chatbot-close-btn" onclick="toggleChatbot()">×</button>
-        <iframe src="chatbot-widget.html" width="450" height="600" frameborder="0" style="border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.3);"></iframe>
+        <iframe src="chatbot-widget.html" width="450" height="600" frameborder="0"
+            style="border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.3);"></iframe>
     </div>
     <script>
         function toggleChatbot() {
@@ -584,4 +1196,5 @@
         }
     </script>
 </body>
+
 </html>
